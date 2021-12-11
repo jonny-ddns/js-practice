@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="UTF-8">				
+	</head>
+	<body>
+		<h2>say what you want</h2>	
+		<form action="result01.html" method="get" id="form01" onsubmit="console.log('form tag'); return false;">
+			<p>NAME : <input type="text" name="name"></p>
+			<p>COMMENT : <input type="text" name="msg" onkeydown="return true;"></p>
+			<p>쓰지마세용 : <input type="text" name="blank" onkeydown="return false;"></p>
+			<input type="submit" value="SUBMIT">
+		</form>
+		<script>
+			var t = document.getElementById("form01");
+			t.onsubmit = function afterSubmit(){
+				console.log("onSubmit button");
+				return false;
+			}
+			function eventListener01(){
+				console.log("event Listener 01 - submit");
+			}			
+			function eventListener02(){
+				console.log("event Listener 02 - change");
+			}
+
+			t.addEventListener("submit", eventListener01);
+			t.addEventListener("submit", eventListener02);
+			t.addEventListener("change", eventListener02);
+		</script>
+	</body>
+</html>

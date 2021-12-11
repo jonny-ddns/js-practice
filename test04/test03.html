@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<script>
+			var req = new XMLHttpRequest();
+			req.onreadystatechange = function f(){
+				console.log(this.readyState, this.status);
+			}
+			req.open("GET", "http://google.com");
+			req.send();
+		</script>
+	</head>
+	<body>
+		<h2>AJAX test</h2>
+	</body>
+</html>

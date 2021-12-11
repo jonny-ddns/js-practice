@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<script>
+			var req = new XMLHttpRequest();
+			req.onreadystatechange = function f(){
+				console.log(this.readyState, this.status);
+				if(this.readyState == 4 && this.status == 200){
+					console.log(this.response);
+				}
+			}
+			req.open("GET", "http://google.com");
+			req.send();
+		</script>
+	</head>
+	<body>
+		<h2>AJAX test</h2>
+	</body>
+</html>
